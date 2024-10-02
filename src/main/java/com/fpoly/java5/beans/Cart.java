@@ -1,6 +1,7 @@
 package com.fpoly.java5.beans;
-
 import java.util.List;
+
+import java.util.Optional;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cart {
-    private int id;
-    private User user;  
+    private Optional<Integer> id;
+    private User user;
     private List<CartItem> cartItems;
 }

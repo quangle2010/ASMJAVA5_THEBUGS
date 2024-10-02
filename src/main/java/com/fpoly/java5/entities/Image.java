@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -22,7 +21,6 @@ import lombok.Setter;
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
     @Column(name = "image_name")
@@ -31,4 +29,7 @@ public class Image {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    @Column(nullable = false)
+    private Boolean active;
 }

@@ -12,29 +12,31 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "OrderDetails")
+@Table(name = "Order_Details")
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "quantity", nullable = false)
-    private int quantity;
-
-    @Column(name = "price", nullable = false)
-    private double price;
-    
     @ManyToOne
     @JoinColumn(name = "id_order")
     private Order order;
+
     @ManyToOne
     @JoinColumn(name = "id_product")
     private Product product;
+
+    @Column(nullable = false)
+    private int quantity;
+
+    @Column(nullable = false)
+    private Double price;
+
+    @Column(nullable = false)
+    private Boolean active;
 }

@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -22,10 +21,9 @@ import lombok.Setter;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "comment", nullable = false)
+    @Column(nullable = false)
     private String comment;
 
     @ManyToOne
@@ -35,5 +33,7 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "id_product")
     private Product product;
-}
 
+    @Column(nullable = false)
+    private Boolean active;
+}

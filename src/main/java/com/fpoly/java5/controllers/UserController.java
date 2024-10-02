@@ -1,15 +1,26 @@
 package com.fpoly.java5.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.fpoly.java5.entities.User;
+import com.fpoly.java5.jpa.UserJPA;
+
 @Controller
 public class UserController {
+    @Autowired
+    UserJPA userJPA;
+    
     @GetMapping("/admin/list-user")
     public String listCetagoryPage(Model model) {
         model.addAttribute("namePage", "Danh sách người dùng");
-        model.addAttribute("view", "admin/list-user");
+        model.addAttribute("view", "admin/list-user");   
+        List<User> listUser=userJPA.findAll();
+        model.addAttribute("listUser", listUser);
         return "index";
     }
 

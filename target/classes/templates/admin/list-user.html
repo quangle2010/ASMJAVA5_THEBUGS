@@ -44,8 +44,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Dương Nguyễn Minh Tâm</td>
+                        <tr th:each="item : ${listUser}">
+                            <td th:text="${item.fullName}">Dương Nguyễn Minh Tâm</td>
                             <td>Tam234</td>
                             <td>TamdnmPC04374@gmail.com</td>
                             <td>(171) 555-2222</td>

@@ -1,8 +1,7 @@
 package com.fpoly.java5.entities;
-
-import java.util.Date;
 import java.util.List;
-
+import java.util.Date;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,13 +11,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -28,30 +24,30 @@ import lombok.Setter;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int id;
 
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @Column(name = "phone", nullable = false)
+    @Column(nullable = false)
     private String phone;
 
-    @Column(name = "address", nullable = false)
+    @Column(nullable = false)
     private String address;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "date", nullable = false)
+    @Column(nullable = false)
     private Date date;
 
-    @Column(name = "status", nullable = false)
+    @Column(nullable = false)
     private String status;
 
     @ManyToOne
     @JoinColumn(name = "id_user")
     private User user;
 
-    @OneToMany(mappedBy = "order")
+    @Column(nullable = false)
+    private Boolean active;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
 }
-
