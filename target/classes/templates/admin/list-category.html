@@ -1,0 +1,97 @@
+<section th:fragment="content">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="container my-4">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h2>Manage <b>Category</b></h2>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Search</span>
+                                <input type="text" class="form-control" placeholder="Search key" aria-label=""
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <a th:href="@{/admin/form-category}" class="btn btn-primary"><i class="fa fa-plus"></i>
+                                <span>Add</span></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Hình ảnh</th>
+                            <th>Mô tả</th>
+                            <th></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thomas Hardy</td>
+                            <td>thomashardy.png</td>
+                            <td>89 Chiaroscuro Rd, Portland, USA</td>
+                            <td></td>
+                            <td>
+                                <a th:href="@{/admin/form-category}" class="btn btn-success me-3"><i class="fa fa-pencil"
+                                        title="Edit"></i></a>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#delete">
+                                    <i class="fa fa-trash" title="Delete"></i>
+                                </button>
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>
+                <div class="clearfix">
+                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link">4</a></li>
+                        <li class="page-item"><a href="#" class="page-link">5</a></li>
+                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="delete">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Delete Cetagory</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-5">Xác nhập xóa?</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-primary" data-bs-dismiss="modal" value="NO">
+                    <input type="submit" class="btn btn-danger" value="Yes">
+                </div>
+            </form>
+      
+          </div>
+        </div>
+      </div>
+</section>

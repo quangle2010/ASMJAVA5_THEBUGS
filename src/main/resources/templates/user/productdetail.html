@@ -1,0 +1,134 @@
+<section th:fragment="content">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="product_details_area p_100">
+        <div class="container">
+            <div class="row product_d_price">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="img/product/product-details-1.jpg" alt="" />
+                </div>
+                <div class="col-lg-6">
+                    <div class="product_details_text">
+                        <h4>Brown Cake</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum labore rem itaque
+                            praesentium eos aspernatur ea voluptates reprehenderit distinctio eligendi placeat
+                            exercitationem aperiam, vitae veritatis ipsa repellendus cupiditate voluptate delectus?</p>
+                        <h5>Price :<span>$24.5</span></h5>
+                        <div class="quantity_box">
+                            <label for="quantity">Quantity :</label>
+                            <input type="number" placeholder="1" id="quantity" min="1">
+                        </div>
+                        <a class="pink_more" href="#">Thêm vào giỏ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product_tab_area">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                            role="tab" aria-controls="nav-home" aria-selected="true">Descripton</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                            role="tab" aria-controls="nav-profile" aria-selected="false">Specification</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                            role="tab" aria-controls="nav-contact" aria-selected="false">Review (0)</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="welcome_bakery_area pink_cake_feature">
+        <div class="container">
+            <div class="cake_feature_inner">
+                <div class="title_view_all">
+                    <div class="float-left">
+                        <div class="main_w_title">
+                            <h2>Sản phẩm tương tự</h2>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <a class="pest_btn" href="#">Xem tất cả</a>
+                    </div>
+                </div>
+                <div class="cake_feature_slider owl-carousel">
+                    <div class="item">
+                        <div class="cake_feature_item">
+                            <div class="cake_img">
+                                <img src="img/cake-feature/c-feature-1.jpg" alt="">
+                            </div>
+                            <div class="cake_text">
+                                <h4>$29</h4>
+                                <h3>Strawberry Cupcakes</h3>
+                                <a class="pest_btn" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cake_feature_item">
+                            <div class="cake_img">
+                                <img src="img/cake-feature/c-feature-2.jpg" alt="">
+                            </div>
+                            <div class="cake_text">
+                                <h4>$29</h4>
+                                <h3>Strawberry Cupcakes</h3>
+                                <a class="pest_btn" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cake_feature_item">
+                            <div class="cake_img">
+                                <img src="img/cake-feature/c-feature-3.jpg" alt="">
+                            </div>
+                            <div class="cake_text">
+                                <h4>$29</h4>
+                                <h3>Strawberry Cupcakes</h3>
+                                <a class="pest_btn" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cake_feature_item">
+                            <div class="cake_img">
+                                <img src="img/cake-feature/c-feature-4.jpg" alt="">
+                            </div>
+                            <div class="cake_text">
+                                <h4>$29</h4>
+                                <h3>Strawberry Cupcakes</h3>
+                                <a class="pest_btn" href="#">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

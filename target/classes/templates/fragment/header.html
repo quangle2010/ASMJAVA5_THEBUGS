@@ -1,0 +1,73 @@
+<header class="main_header_area" th:fragment="header">
+    <div class="top_header_area row m0">
+        <div class="container">
+          <div class="float-left">
+            <a href="tell:+18004567890"><i class="fa fa-phone" aria-hidden="true"></i>0766938732</a>
+            <a href="mainto:info@cakebakery.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+              theBugs@gmail.com</a>
+          </div>
+          <div class="float-right">
+            <ul class="h_social list_style">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+  
+          </div>
+        </div>
+      </div>
+      <div class="main_menu_two">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/home}"><img src="/img/logo-2.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="my_toggle_menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav justify-content-end">
+                <li class=""><a th:href="@{/home}">Trang chủ</a></li>
+
+                <li class="dropdown submenu">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Quản lý</a>
+									<ul class="dropdown-menu">
+                    <li><a th:href="@{/admin/list-user}">Người dùng</a></li>
+                    <li><a th:href="@{/admin/list-product}">Sản phẩm</a></li>
+										<li><a th:href="@{/admin/list-category}">Loại sản phẩm</a></li>								
+                    <li><a th:href="@{/admin/statistical-order}">Thống kê đơn hàng</a></li>
+                    <li><a th:href="@{/admin/statistical-product}">Thống kê sản phẩm</a></li>
+									</ul>
+								</li>
+                <li class="dropdown submenu">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sản Phẩm</a>
+									<ul class="dropdown-menu">
+										<li><a th:href="@{/product}">Sản Phẩm 1</a></li>
+										<li><a th:href="@{/product}">Sản Phẩm 2</a></li>
+						
+									</ul>
+								</li>           
+                <li><a th:href="@{/menu}">Thực Đơn</a></li>
+                <li><a th:href="@{/about}">Giới Thiệu</a></li>
+                <li><a th:href="@{/contact}"href="contact.html">Liên Hệ</a></li>
+                <li class="dropdown submenu">
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="lnr lnr-user"></i></a>
+									<ul class="dropdown-menu">
+										<li><a th:href="@{/login}">Đăng nhập</a></li>
+										<li><a th:href="@{/user/profile}">Thông tin</a></li>
+                    <li><a th:href="@{/user/restpass}">Đổi mật khẩu</a></li>
+                    <li><a th:href="@{/login}">Đăng xuất</a></li>
+									</ul>
+								</li>
+                <li class="shop_cart"><a th:href="@{/user/cart}"><i class="lnr lnr-cart"></i></a></li>
+                
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+</header>

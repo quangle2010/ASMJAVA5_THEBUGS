@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Asmjava5ThebugsApplication<Java5>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fpoly.java5.Asmjava5ThebugsApplication",
+            "projectName": "Java5",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

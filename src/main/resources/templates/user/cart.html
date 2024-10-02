@@ -1,0 +1,54 @@
+<section th:fragment="content">
+    <section class="cart_table_area p_100">
+        <div class="container">
+          <div class="table-responsive">
+            <table class="table" style="text-align: center">
+              <thead>
+                <tr>
+                  <th scope="col">Ảnh Chi Tiết</th>
+                  <th scope="col">Tên Bánh</th>
+                  <th scope="col">Giá Tiền</th>
+                  <th scope="col">Số Lượng</th>
+                  <th scope="col">Thành Tiền</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="/img/product/cart-img.jpg" alt="" />
+                  </td>
+                  <td>Wheel Axel</td>
+                  <td>25.000VND</td>
+                  <td>
+                    <input type="number" class="quantity" placeholder="1" id="quantity" min="1" />
+    
+                  </td>
+                  <td>50.000VND</td>
+                  <td><a name="" id="" class="btn" href="#">x</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row cart_total_inner">
+            <div class="col-lg-7"></div>
+            <div class="col-lg-5">
+              <div class="cart_total_text">
+                <div class="cart_head">Tổng Tiền</div>
+                <div class="sub_total">
+                  <h5>Tạm Tính <span>50.000VND</span></h5>
+                  <h5>VAT <span>10%</span></h5>
+                </div>
+                <div class="total">
+                  <h4>Tổng cống <span>45.000VND</span></h4>
+                </div>
+                <div class="cart_footer">
+                  <a class="pest_btn" href="#">Thanh Toán</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</section>

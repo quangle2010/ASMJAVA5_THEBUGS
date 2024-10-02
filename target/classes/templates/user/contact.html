@@ -1,0 +1,63 @@
+<section th:fragment="content">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="contact_form_area p_100">
+        <div class="container">
+            <div class="main_title">
+                <h2>Liên Lạc Với Chúng Tôi</h2>
+                <h5>Bạn có điều gì muốn chia sẻ? Hãy kết nối với chúng tôi qua mẫu liên hệ bên dưới.</h5>
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <form class="row contact_us_form" action="http://galaxyanalytics.net/demos/cake/theme/cake-html/contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Tên của bạn">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Địa chỉ email">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Chủ đề">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea class="form-control" name="message" id="message" rows="1" placeholder="Nhập tin nhắn"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <button type="submit" value="submit" class="btn order_s_btn form-control">Gửi ngay</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 offset-md-1">
+                    <div class="contact_details">
+                        <div class="contact_d_item">
+                            <h3>Địa Chỉ :</h3>
+                            <p>Toà nhà FPT Polytechnic, Đ. Số 22 <br /> Thường Thạnh, Cái Răng, Cần Thơ, Việt Nam</p>
+                        </div>
+                        <div class="contact_d_item">
+                            <h5>Điện Thoại : <a href="tel:0981725836">0766938732</a></h5>
+                            <h5>Email : <a href="mailto:rockybd1995@gmail.com">theBugs@gmail.com</a></h5>
+                        </div>
+                        <div class="contact_d_item">
+                            <h3>Giờ Mở Cửa :</h3>
+                            <p>8:00 Sáng – 10:00 Tối</p>
+                            <p>Thứ Hai – Thứ Bảy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map_area">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31435.361547197932!2d105.72016954421994!3d9.982106455020517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08906415c355f%3A0x416815a99ebd841e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1727282969117!5m2!1svi!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+</section>

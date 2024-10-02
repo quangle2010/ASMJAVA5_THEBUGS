@@ -1,0 +1,13 @@
+<section th:fragment="banner">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,47 @@
+<section th:fragment="content">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="main_form d-flex justify-content-center align-items-center my-4">
+        <div class="card w-100" style="max-width: 600px;">
+            <div class="card-header mb-1 fs-3 text-center">Form-Category </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="mb-3 row">
+                        <label for="thanhphan" class="col-sm-3 col-form-label">Thành phần</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="thanhphan"/>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="image" class="col-sm-3 col-form-label">Hình</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control" id="image" name="image" multiple accept="image/*">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Mô tả</label>
+                        <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+                    </div>
+                    <div class="d-flex justify-content-center ">
+                        <div> <button type="submit" class="btn btn-primary btn-block ">Save</button></div>
+                        <div class="mx-4"><a href="" class="btn btn-primary">Clear</a></div>
+                        <div> <a th:href="@{/admin/list-category}" class="btn btn-primary">List</a></div>
+
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
