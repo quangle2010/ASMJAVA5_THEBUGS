@@ -1,5 +1,6 @@
-![image](https://github.com/user-attachments/assets/14d9b5fa-708f-4ad0-b3f5-145a95b56e4c)Giao diện trang web
+Giao diện trang web
 I. Giao diện người dùng
+![image](https://github.com/user-attachments/assets/14d9b5fa-708f-4ad0-b3f5-145a95b56e4c)
 1.1 Trang chủ
 ![trangchu](https://github.com/user-attachments/assets/df77389d-cf2f-48b6-aab9-115a4fd9aaac)
 
