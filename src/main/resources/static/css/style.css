@@ -6730,3 +6730,75 @@ table.table-striped.table-hover tbody tr:hover {
   border-width: 0 3px 3px 0;
   transform: rotateZ(45deg);
 }
+
+/* login&register page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../img/home-slider/slider-4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container {
+    width: 600px;
+    padding: 35px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.login-container h2 {
+    color: #d63384;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+.form-label {
+  color: black;
+}
+.btn-primary {
+    background-color: #d63384;
+    border-color: #d63384;
+    padding: 8px;
+    font-size: 15px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #bb2d73;
+    border-color: #bb2d73;
+    box-shadow: 0 4px 10px rgba(214, 51, 132, 0.5);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #d63384;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
