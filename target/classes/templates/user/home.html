@@ -1,15 +1,16 @@
 <section th:fragment="content">
-   
-    <section class="main_slider_area">
+
+	<section class="main_slider_area">
 		<div id="main_slider5" class="rev_slider" data-version="5.3.1.6">
 			<ul>
-				<li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+				<li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
 					data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300"
 					data-thumb="img/home-slider/slider-12.jpg" data-rotate="0" data-saveperformance="off" data-title="Creative"
 					data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
-					data-param8="" data-param9="" data-param10="" data-description="">
+					data-param8="" data-param9="" data-param10="" data-description="" th:each="specialProduct : ${specialProducts}"
+					th:attr="data-index='rs-158'+${specialProduct.id}">
 					<!-- MAIN IMAGE -->
-					<img src="img/home-slider/slider-12.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+					<img th:src="@{'/img/home-slider/slider-1' + ${specialProduct.id}} + '.jpg'" alt="" data-bgposition="center center" data-bgfit="cover"
 						data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
 
 					<!-- LAYER NR. 1 -->
@@ -21,7 +22,7 @@
 							data-whitespace="normal" data-type="text" data-responsive_offset="on"
 							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
 							data-textAlign="['left','left','left','left']">
-							<h3><span class="badge  bg-danger">150000đ</span></h3>
+							<h3><span class="badge bg-danger" th:text="${#numbers.formatDecimal(specialProduct.price, 0, 'COMMA', 0, 'POINT') + ' đ'}">150000đ</span></h3>
 						</div>
 
 						<div class="tp-caption tp-resizeme first_text" data-x="['right','right','left','15','15','15']"
@@ -30,7 +31,7 @@
 							data-lineheight="['76','76','76','50','40']" data-width="['780','740','780','780','700','400']"
 							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
 							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-							data-textAlign="['left','left','left','left']">Bánh Muffin <br />${Thành phần}</div>
+							data-textAlign="['left','left','left','left']" th:text="${specialProduct.productName}">Bánh Muffin <br /><span th:text="${specialProduct.ingredients}"></span></div>
 
 						<div class="tp-caption tp-resizeme secand_text" data-x="['right','right','left','15','15','15']"
 							data-hoffset="['0','110','15','15','15','0']" data-y="['top','top','top','top']"
@@ -38,6 +39,7 @@
 							data-lineheight="['28','28','28','28']" data-width="['620','620','620','620','500','380']"
 							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
 							data-transform_idle="o:1;"
+							th:text="${specialProduct.descriptions}"
 							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
 							Thơm ngon từng ổ, lan tỏa hương vị Việt!
 						</div>
@@ -52,110 +54,7 @@
 						</div>
 					</div>
 				</li>
-				<li data-index="rs-1588" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
-					data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300"
-					data-thumb="img/home-slider/slider-13.jpg" data-rotate="0" data-saveperformance="off" data-title="Creative"
-					data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
-					data-param8="" data-param9="" data-param10="" data-description="">
-					<!-- MAIN IMAGE -->
-					<img src="img/home-slider/slider-13.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
-						data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
-					<!-- LAYERS -->
-					<!-- LAYERS -->
 
-					<!-- LAYER NR. 1 -->
-					<div class="slider_text_box">
-
-						<div class="tp-caption tp-resizeme price" data-x="['left','left','left','15','15','15']"
-							data-hoffset="['300','300','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['120','120','70','70','115','130']" data-fontsize="['60','60','60','40','30']"
-							data-lineheight="['76','76','76','50','40']" data-width="['780','780','780','400']" data-height="none"
-							data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-							data-textAlign="['left','left','left','left']">
-							<h3><span class="badge text-bg-danger">150000đ</span></h3>
-						</div>
-
-						<div class="tp-caption tp-resizeme first_text" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['-150','0','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['155','155','155','155','235','230']" data-fontsize="['60','60','60','40','30']"
-							data-lineheight="['76','76','76','50','40']" data-width="['780','740','780','780','700','400']"
-							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-							data-textAlign="['left','left','left','left']">Bánh Donut <br />${Thành Phần}</div>
-
-						<div class="tp-caption tp-resizeme secand_text" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['0','110','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['316','316','316','270','330','320']" data-fontsize="['20','20','20','20','16']"
-							data-lineheight="['28','28','28','28']" data-width="['620','620','620','620','500','380']"
-							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-transform_idle="o:1;"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-							Thơm ngon từng ổ, lan tỏa hương vị bánh Việt
-						</div>
-
-						<div class="tp-caption tp-resizeme slider_button" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['0','0','15','0','0','0']" data-y="['top','top','top','top']"
-							data-voffset="['405','405','405','355','400','415']" data-fontsize="['14','14','14','14']"
-							data-lineheight="['46','46','46','46']" data-width="['620','740','620','620','300']" data-height="none"
-							data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-							<a class="main_btn" href="#">Chi tiết</a>
-						</div>
-					</div>
-				</li>
-				<li data-index="rs-1589" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
-					data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300"
-					data-thumb="img/home-slider/slider-14.jpg" data-rotate="0" data-saveperformance="off" data-title="Creative"
-					data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
-					data-param8="" data-param9="" data-param10="" data-description="">
-					<!-- MAIN IMAGE -->
-					<img src="img/home-slider/slider-14.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
-						data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
-					<!-- LAYERS -->
-					<!-- LAYERS -->
-
-					<!-- LAYER NR. 1 -->
-					<div class="slider_text_box">
-
-						<div class="tp-caption tp-resizeme price" data-x="['left','left','left','15','15','15']"
-							data-hoffset="['300','300','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['120','120','70','70','115','130']" data-fontsize="['60','60','60','40','30']"
-							data-lineheight="['76','76','76','50','40']" data-width="['780','780','780','400']" data-height="none"
-							data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-							data-textAlign="['left','left','left','left']">
-							<h3><span class="badge text-bg-danger">150000đ</span></h3>
-						</div>
-
-						<div class="tp-caption tp-resizeme first_text" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['-150','0','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['155','155','155','155','235','230']" data-fontsize="['60','60','60','40','30']"
-							data-lineheight="['76','76','76','50','40']" data-width="['780','740','780','780','700','400']"
-							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-							data-textAlign="['left','left','left','left']">Muffin Dâu <br />tạo nên từ hương vị tình yêu</div>
-
-						<div class="tp-caption tp-resizeme secand_text" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['0','110','15','15','15','0']" data-y="['top','top','top','top']"
-							data-voffset="['316','316','316','270','330','320']" data-fontsize="['20','20','20','20','16']"
-							data-lineheight="['28','28','28','28']" data-width="['620','620','620','620','500','380']"
-							data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-transform_idle="o:1;"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-							Thơm ngon từng ổ, lan tỏa hương vị Việt
-						</div>
-
-						<div class="tp-caption tp-resizeme slider_button" data-x="['right','right','left','15','15','15']"
-							data-hoffset="['0','0','15','0','0','0']" data-y="['top','top','top','top']"
-							data-voffset="['405','405','405','355','400','415']" data-fontsize="['14','14','14','14']"
-							data-lineheight="['46','46','46','46']" data-width="['620','740','620','620','300']" data-height="none"
-							data-whitespace="normal" data-type="text" data-responsive_offset="on"
-							data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
-							<a class="main_btn" href="#">Chi tiết</a>
-						</div>
-					</div>
-				</li>
 			</ul>
 		</div>
 	</section>
@@ -177,63 +76,19 @@
 					</div>
 				</div>
 				<div class="cake_feature_slider owl-carousel">
-                    <div class="item">
+					<div class="item" th:each="specialProduct : ${specialProducts}">
 						<div class="cake_feature_item">
 							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
+								<img th:src="@{'/images/'+${specialProduct.images[0].imageName}}">
 							</div>
 							<div class="cake_text">
-                                <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-								<a class="pest_btn" href="#">Thêm vào giỏ</a>
-							</div>
-						</div>
-					</div>
-                    <div class="item">
-						<div class="cake_feature_item">
-							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
-							</div>
-							<div class="cake_text">
-                                <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-								<a class="pest_btn" href="#">Thêm vào giỏ</a>
-							</div>
-						</div>
-					</div>
-                    <div class="item">
-						<div class="cake_feature_item">
-							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
-							</div>
-							<div class="cake_text">
-                                <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-								<a class="pest_btn" href="#">Thêm vào giỏ</a>
-							</div>
-						</div>
-					</div>
-                    <div class="item">
-						<div class="cake_feature_item">
-							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
-							</div>
-							<div class="cake_text">
-                                <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-								<a class="pest_btn" href="#">Thêm vào giỏ</a>
-							</div>
-						</div>
-					</div>
-                    <div class="item">
-						<div class="cake_feature_item">
-							<div class="cake_img">
-								<img src="img/cake-feature/c-feature-1.jpg" alt="">
-							</div>
-							<div class="cake_text">
-                                <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-								<a class="pest_btn" href="#">Thêm vào giỏ</a>
+								<h3 class="cake_text_name" th:text="${specialProduct.productName}">Strawberry Cupcakes</h3>
+								<h3 class="cake_text_price"
+									th:text="${#numbers.formatDecimal(specialProduct.price, 0, 'COMMA', 0, 'POINT')}">50000 VND</h3>
+									<form th:action="@{/user/cart-user/add-to-cart}" method="get">
+										<input type="text" th:value="${specialProduct.id}" hidden>
+										<button class="pest_btn">Thêm vào giỏ</button>
+									</form>
 							</div>
 						</div>
 					</div>
@@ -247,73 +102,36 @@
 	<section class="special_recipe_area">
 		<div class="container">
 			<div class="special_recipe_slider owl-carousel">
-				<div class="item">
+				<div class="item" th:each="specialProduct : ${specialProducts}">
 					<div class="media">
 						<div class="d-flex">
-							<img src="img/recipe/recipe-1.png" alt="">
+							<img th:src="@{'/images/'+${specialProduct.images[0].imageName}}" alt="">
 						</div>
 						<div class="media-body">
-							<h4>Special Recipe</h4>
-							<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-								aliquid ex ea commodi equatur uis autem vel eum.</p>
+							<h4 th:text="${specialProduct.productName + ' Recipe'}"></h4>
+							<p th:text="${specialProduct.ingredients}"></p>
 							<a class="w_view_btn" href="#">Chi tiết</a>
 						</div>
 					</div>
 				</div>
-				<div class="item">
-					<div class="media">
-						<div class="d-flex">
-							<img src="img/recipe/recipe-1.png" alt="">
-						</div>
-						<div class="media-body">
-							<h4>Special Recipe</h4>
-							<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-								aliquid ex ea commodi equatur uis autem vel eum.</p>
-							<a class="w_view_btn" href="#">Chi tiết</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="media">
-						<div class="d-flex">
-							<img src="img/recipe/recipe-1.png" alt="">
-						</div>
-						<div class="media-body">
-							<h4>Special Recipe</h4>
-							<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-								aliquid ex ea commodi equatur uis autem vel eum.</p>
-							<a class="w_view_btn" href="#">Chi tiết</a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="media">
-						<div class="d-flex">
-							<img src="img/recipe/recipe-1.png" alt="">
-						</div>
-						<div class="media-body">
-							<h4>Special Recipe</h4>
-							<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-								aliquid ex ea commodi equatur uis autem vel eum.</p>
-							<a class="w_view_btn" href="#">Chi tiết</a>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</section>
 	<!--================End Special Recipe Area =================-->
 
 	<!--================End Client Says Area =================-->
-    <section class="our_chef_area p_100">
-		<div class="container" >
+	<section class="our_chef_area p_100">
+		<div class="container">
 			<div class="row our_chef_inner m-0">
 				<div class="col-lg-3">
 					<div class="chef_text_item">
 						<div class="main_title">
 							<h2>Đầu bếp</h2>
 							<p>
-								Đầu bếp là nghệ sĩ trong bếp, sáng tạo ra những món ăn hấp dẫn. Họ không chỉ nấu nướng mà còn truyền cảm hứng cho thực khách qua hương vị và cách trình bày. Với đam mê và kỹ năng, đầu bếp biến mỗi bữa ăn thành một trải nghiệm ẩm thực độc đáo.</p>
+								Đầu bếp là nghệ sĩ trong bếp, sáng tạo ra những món ăn hấp dẫn. Họ không chỉ nấu nướng mà còn truyền cảm
+								hứng cho thực khách qua hương vị và cách trình bày. Với đam mê và kỹ năng, đầu bếp biến mỗi bữa ăn thành
+								một trải nghiệm ẩm thực độc đáo.</p>
 						</div>
 					</div>
 				</div>
@@ -322,16 +140,16 @@
 						<div class="col-lg-4 col-6">
 							<div class="chef_item">
 								<div class="chef_img">
-									<img class="img-fluid" src="img/chef/chef-2.jpg" alt="">
+									<img class="img-fluid" src="img/chef/chef-4.jpg" alt="">
 									<ul class="list_style">
 										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 										<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
 									</ul>
 								</div>
 								<a href="#">
-									<h4>Michale Joe</h4>
+									<h4>Trọng Trí</h4>
 								</a>
-								<h5>Expert in Cake Making</h5>
+								<h5>Chef de cuisine</h5>
 							</div>
 						</div>
 						<div class="col-lg-4 col-6">
@@ -419,76 +237,14 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="arivals_slider owl-carousel">
-						<div class="item">
+						<div class="item" th:each="newProduct : ${newProducts}">
 							<div class="cake_feature_item">
 								<div class="cake_img">
-									<img src="img/cake-feature/arivals-1.jpg" alt="">
+									<img th:src="@{'/images/'+${newProduct.images[0].imageName}}" alt="">
 								</div>
 								<div class="cake_text">
-									<h3 class="cake_text_name">Strawberry Cupcakes</h3>
-									<h3 class="cake_text_price">50000 VND</h3>
-									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cake_feature_item">
-								<div class="cake_img">
-									<img src="img/cake-feature/arivals-2.jpg" alt="">
-								</div>
-								<div class="cake_text">
-									<h3 class="cake_text_name">Strawberry Cupcakes</h3>
-									<h3 class="cake_text_price">50000 VND</h3>
-									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
-
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cake_feature_item">
-								<div class="cake_img">
-									<img src="img/cake-feature/arivals-1.jpg" alt="">
-								</div>
-								<div class="cake_text">
-								    <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
-
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="cake_feature_item">
-								<div class="cake_img">
-									<img src="img/cake-feature/arivals-2.jpg" alt="">
-								</div>
-								<div class="cake_text">
-									<h3 class="cake_text_name">Strawberry Cupcakes</h3>
-									<h3 class="cake_text_price">50000 VND</h3>
-									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
-								</div>
-							</div>
-						</div>
-                        <div class="item">
-							<div class="cake_feature_item">
-								<div class="cake_img">
-									<img src="img/cake-feature/arivals-2.jpg" alt="">
-								</div>
-								<div class="cake_text">
-								    <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
-									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
-								</div>
-							</div>
-						</div>
-                        <div class="item">
-							<div class="cake_feature_item">
-								<div class="cake_img">
-									<img src="img/cake-feature/arivals-2.jpg" alt="">
-								</div>
-								<div class="cake_text">
-								    <h3 class="cake_text_name">Strawberry Cupcakes</h3>
-                                <h3 class="cake_text_price">50000 VND</h3>
+									<h3 class="cake_text_name" th:text="${newProduct.productName}">Strawberry Cupcakes</h3>
+									<h3 class="cake_text_price" th:text="${#numbers.formatDecimal(newProduct.price, 0, 'COMMA', 0, 'POINT')}">50000 VND</h3>
 									<a class="pest_btn" href="#">Thêm Vào Giỏ</a>
 								</div>
 							</div>
@@ -508,41 +264,18 @@
 					<h2>Khách hàng nói gì?</h2>
 				</div>
 				<div class="client_says_slider owl-carousel">
-					<div class="item">
+					<div class="item" th:each="comment : ${userComments}">
 						<div class="media">
 							<div class="d-flex">
-								<img src="img/client/client-1.png" alt="">
+								<img alt="" th:src="@{'/img/client/client-' + ${comment.id}} + '.png'">
 								<h3>“</h3>
 							</div>
 							<div class="media-body">
-								<p>Phong độ là nhất thời, đẳng cấp là mãi mãi</p>
-								<h5>MR- Joey Tribbiani</h5>
+								<p th:text="${comment.comment}"></p>
+								<h5 th:text="${comment.user.fullName}"></h5>
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="media">
-							<div class="d-flex">
-								<img src="img/client/client-1.png" alt="">
-							</div>
-							<div class="media-body">
-								<p>Tôi cảm thấy bản thân đang ở 1 nơi rất cao sau khi ăn bánh của theBugs</p>
-								<h5>MR- Chandler Bing</h5>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="media">
-							<div class="d-flex">
-								<img src="img/client/client-1.png" alt="">
-							</div>
-							<div class="media-body">
-								<p>Cuộc sống quá đỗi nhàm chán? Hãy thử bánh của theBugs, mĩ vị trần gian</p>
-								<h5>MR- Robert joe</h5>
-							</div>
-						</div>
-					</div>
-                  
 				</div>
 			</div>
 		</div>

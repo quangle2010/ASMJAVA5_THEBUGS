@@ -140,8 +140,8 @@ public class ProductController {
 	}
 	
 	private boolean saveImage(ArrayList<MultipartFile> images, Product product) {
+		Path filePath = Paths.get("images");
 		for(int i = 0; i < images.size(); i ++) {
-			Path filePath = Paths.get("images");
 			try {
 				if (images.get(i).isEmpty()) {
 					return false;
