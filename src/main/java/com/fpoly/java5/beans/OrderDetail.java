@@ -11,7 +11,7 @@ import lombok.Setter;
 public class OrderDetail {
     private Optional<Integer> id;
     private Order order;
-    private Product product;
+    private ProductBean product;
     private int quantity;
     private Double price;
     private Boolean active;

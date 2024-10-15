@@ -1,115 +1,133 @@
 <section th:fragment="content">
-    <section class="banner_area">
-        <div class="container">
-            <div class="banner_text">
-                <h3 th:text="${namePage}"></h3>
-                <ul>
-                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
-                    <li><a class="text-white" th:text="${namePage}"></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <div class="container my-4">
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <h2>Manage <b>Product</b></h2>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Search</span>
-                                <input type="text" class="form-control" placeholder="Search key" aria-label=""
-                                    aria-describedby="basic-addon1">
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="input-group">                          
-                                <label for="browser" class="input-group-text" >Loại sản phẩm</label>
-                                <input class="form-control " list="browsers" name="browser" id="browser"multiple>
-                                <datalist class="bg-white" id="browsers" >
-                                  <option value="Edge">
-                                  <option value="Firefox">
-                                  <option value="Chrome">
-                                  <option value="Opera">
-                                  <option value="Safari">
-                                </datalist>
-                            </div>
-                            
-                        </div>
-                        <div class="col-sm-2">
-                            <a th:href="@{/admin/form-product}" class="btn btn-primary"><i class="fa fa-plus"></i>
-                                <span>Add</span></a>
-                        </div>
-                    </div>
-                </div>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>Tên</th>
-                            <th>Hương vị</th>
-                            <th>Thành phần</th>
-                            <th>Số lượng</th>
-                            <th>Giá</th>
-                          
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bánh kem</td>
-                           
-                            <td>bột mì</td>
-                            <td>bột mì</td>
-                            <td>10</td>
-                            <td>10000</td>
-                            <td>
-                                <a th:href="@{/admin/form-product}" class="btn btn-success me-3"><i class="fa fa-pencil"
-                                        title="Edit"></i></a>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                    data-bs-target="#delete">
-                                    <i class="fa fa-trash" title="Delete"></i>
-                                </button>
-                            </td>
-                        </tr>                        
-                    </tbody>
-                </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+	<section class="banner_area">
+		<div class="container">
+			<div class="banner_text">
+				<h3 th:text="${namePage}"></h3>
+				<ul>
+					<li><a th:href="@{/home}" class="text-white">Home</a></li>
+					<li><a class="text-white" th:text="${namePage}"></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<div class="container-xxl my-4 p-0">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-sm-3 my-3">
+							<h2>
+								Manage <b>Product</b>
+							</h2>
+						</div>
+						<div class="col-sm-9 my-3">
+							<a th:href="@{/admin/form-product}" class="btn btn-primary"><i class="fa fa-plus"></i>
+								<span>Add</span></a>
+						</div>
+						<div class="row">
+							<form th:action="@{/admin/list-product}" method="get" class="d-flex w-100">
+									<div class="col-sm-5">
+											<div class="input-group">
+													<span class="input-group-text" id="basic-addon1">Search</span>
+													<input type="text" class="form-control" placeholder="Search key" name="searchKey" aria-label="Search key" aria-describedby="basic-addon1">
+											</div>
+									</div>
+					
+									<div class="col-sm-5">
+											<div class="input-group">
+													<label for="categories" class="input-group-text">Loại sản phẩm</label>
+													<input class="form-control" list="categories" name="category" id="browser">
+													<datalist class="bg-white" id="categories">
+															<option th:value="${category.id}" th:text="${category.categoryName}" th:each="category : ${categories}"></option>
+													</datalist>
+											</div>
+									</div>
+					
+									<div class="col-sm-2">
+											<button type="submit" class="btn btn-primary p-3 px-5 fw-bold">
+													<i class="fa fa-magnifying-glass"></i> Search
+											</button>
+									</div>
+							</form>
+					</div>
+					
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Tên</th>
+							<th>Hương vị</th>
+							<th>Thành phần</th>
+							<th>Số lượng</th>
+							<th>Giá</th>
 
-    <div class="modal" id="delete">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title">Delete product</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="fs-5">Xác nhập xóa?</p>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-primary" data-bs-dismiss="modal" value="NO">
-                    <input type="submit" class="btn btn-danger" value="Yes">
-                </div>
-            </form>
-      
-          </div>
-        </div>
-      </div>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="product : ${products}">
+							<td th:text="${product.productName}">Bánh kem</td>
+							<td th:text="${product.flavor}">Chocolate</td>
+							<td th:text="${product.ingredients}">bột mì, đường, sữa</td>
+							<td th:text="${product.quantity}">10</td>
+							<td th:text="${product.price}">50000</td>
+							<td><a th:href="@{/admin/form-product(id=${product.id})}" class="btn btn-success me-3"> <i
+										class="fa fa-pencil" title="Edit"></i>
+								</a>
+								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
+									th:data-id="${product.id}">
+									<i class="fa fa-trash" title="Delete"></i>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="clearfix">
+					<div class="hint-text">
+						Showing <b>5</b> out of <b>25</b> entries
+					</div>
+					<ul class="pagination">
+						<li class="page-item disabled"><a href="#" class="page-link">Previous</a></li>
+						<li class="page-item"><a href="#" class="page-link">1</a></li>
+						<li class="page-item"><a href="#" class="page-link">2</a></li>
+						<li class="page-item active"><a href="#" class="page-link">3</a></li>
+						<li class="page-item"><a href="#" class="page-link">4</a></li>
+						<li class="page-item"><a href="#" class="page-link">5</a></li>
+						<li class="page-item"><a href="#" class="page-link">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="delete">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form th:action="@{/admin/delete-product}" method="get">
+					<div class="modal-header">
+						<h4 class="modal-title">Delete product</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<input type="text" id="idDelete" name="id">
+						<p class="fs-5">Xác nhập xóa?</p>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-primary" data-bs-dismiss="modal" value="NO"> <input type="submit"
+							class="btn btn-danger" value="Yes">
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<script>
+		var editModal = document.getElementById('delete');
+		editModal.addEventListener('show.bs.modal', function (event) {
+			var button = event.relatedTarget;
+			var id = button.getAttribute('data-id');
+			editModal.querySelector('#idDelete').value = id;
+		});
+	</script>
 </section>

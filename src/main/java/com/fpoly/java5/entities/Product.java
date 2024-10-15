@@ -28,24 +28,26 @@ public class Product {
     @Column(name = "product_name", nullable = false)
     private String productName;
 
-    @Column(name = "quantity",nullable = false)
+    @Column(name = "quantity", nullable = false)
     private int quantity;
 
-    @Column(name = "price",nullable = false)
+    @Column(name = "price", nullable = false)
     private Double price;
 
-    @Column(name = "flavor",nullable = false)
+    @Column(name = "flavor", nullable = false)
     private String flavor;
-    @Column(name = "descriptions",nullable = false)
+    
+    @Column(name = "descriptions", nullable = false)
     private String descriptions;
-    @Column(name = "ingredients",nullable = false)
+    
+    @Column(name = "ingredients", nullable = false)
     private String ingredients;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @Column(name = "active" ,nullable = false)
+    @Column(name = "active", nullable = false)
     private Boolean active;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
@@ -56,4 +58,6 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<Comment> comments;
+    
+    
 }

@@ -15,6 +15,6 @@ public class Comment {
       private Optional<Integer> id;
     private String comment;
     private User user;
-    private Product product;
+    private ProductBean product;
     private Boolean active;
 }

@@ -19,5 +19,5 @@ public class Category {
     public String categoryName;
     public String categoryImage;
     public Boolean active;
-    public List<Product> products;
+    public List<ProductBean> products;
 }

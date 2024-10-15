@@ -12,6 +12,6 @@ public class Image {
    
     private Optional<Integer> id;
     private String imageName;
-    private Product product;
+    private ProductBean product;
     private Boolean active;
 }

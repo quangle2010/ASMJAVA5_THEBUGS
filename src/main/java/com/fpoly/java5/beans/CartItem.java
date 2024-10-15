@@ -13,6 +13,6 @@ public class CartItem {
    
      private Optional<Integer> id;
     private Cart cart;
-    private Product product;
+    private ProductBean product;
     private int quantity;
 }
