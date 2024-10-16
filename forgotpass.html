@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ layout:decorate="~{index.html}">
+ 
+ <section layout:fragment="content">
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_text">
+                <h3 th:text="${namePage}"></h3>
+                <ul>
+                    <li><a th:href="@{/home}" class="text-white">Home</a></li>
+                    <li><a class="text-white" th:text="${namePage}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="main_form d-flex justify-content-center align-items-center my-4">
+        <div class="card w-100" style="max-width: 400px;">
+            <div class="card-header mb-1 fs-3 text-center">Quên mật khẩu</div>
+            <div class="card-body">
+                <form action="">
+                    <div class="mb-3 row">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="otp" class="col-sm-4 col-form-label">Mã OTP</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="otp">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="password" class="col-sm-4 col-form-label">Mật khẩu mới</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="password">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="passwordconfim" class="col-sm-4 col-form-label">Xác nhận</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="passwordconfim">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn btn-primary btn-block ">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</html>
